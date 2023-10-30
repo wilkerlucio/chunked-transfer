@@ -1,0 +1,42 @@
+{:paths
+ ["src/main" "resources"]
+
+ :deps
+ {org.clojure/core.async {:mvn/version "1.6.681"}
+  com.wsscode/cljc-misc  {:mvn/version "2022.03.07"}}
+
+ :aliases
+ {:provided
+  {:extra-deps {org.clojure/clojure       {:mvn/version "1.11.0-alpha2"}
+                org.clojure/clojurescript {:mvn/version "1.10.891"}}}
+
+  :test-deps
+  {:extra-paths ["test"]
+   :extra-deps  {org.clojure/test.check {:mvn/version "1.1.0"}}}
+
+  :tasks
+  {:extra-paths ["src/tasks"]
+   :extra-deps  {babashka/babashka {:mvn/version "0.6.5"}}}
+
+  :test
+  {:extra-paths ["test"]
+   :extra-deps  {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"
+                                            :sha     "209b64504cb3bd3b99ecfec7937b358a879f55c1"}}
+   :main-opts   ["-m" "cognitect.test-runner"]}
+
+  :test-cljs
+  {:extra-paths ["test"]
+   :extra-deps  {thheller/shadow-cljs {:mvn/version "2.16.7"}}}
+
+  :jar
+  {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.250"}}
+   :exec-fn      hf.depstar/jar
+   :exec-args    {:group-id    com.wsscode
+                  :artifact-id chunked-transfer
+                  :sync-pom    true}}
+
+  :deploy
+  {:replace-deps {slipset/deps-deploy {:mvn/version "0.1.5"}}
+   :exec-fn      deps-deploy.deps-deploy/deploy
+   :exec-args    {:installer      :remote
+                  :sign-releases? true}}}}

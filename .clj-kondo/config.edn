@@ -1,0 +1,10 @@
+{:skip-comments true
+ :lint-as       {clojure.test.check.clojure-test/defspec clojure.core/def
+                 clojure.test.check.properties/for-all   clojure.core/let}
+ :linters       {:unsorted-required-namespaces {:level :off}
+                 :invalid-arity                {:level :error}
+                 :missing-else-branch          {:level :off}
+                 :unused-referred-var          {:level   :warning
+                                                :exclude {clojure.core.async [go <! <!!]
+                                                          clojure.test       [deftest is are run-tests testing]
+                                                          cljs.test          [deftest is are run-tests testing]}}}}

@@ -1,0 +1,24 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Clojure template
+pom.xml.asc
+*.jar
+*.class
+/lib/
+/classes/
+/target/
+/checkouts/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.nrepl-port
+.cpcache/
+.nrepl-port
+node_modules/
+src/demos
+.clj-kondo/.cache
+.idea
+.shadow-cljs
+web/public/js
+sqlite.db
+.calva/output-window/output.calva-repl
