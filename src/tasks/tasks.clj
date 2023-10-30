@@ -171,8 +171,7 @@
          [_ date iteration] (re-find #"(\d{4}\.\d{2}\.\d{2})(?:-(\d+))?" (or current-version ""))]
      (str (if (= date today)
             (str date "-" (or (some-> iteration Integer/parseInt inc) 1))
-            today)
-          "-alpha"))))
+            today)))))
 
 (defn released?
   ([] (released? (current-version)))
