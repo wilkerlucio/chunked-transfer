@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>jar</packaging>
+  <groupId>com.wsscode</groupId>
+  <artifactId>chunked-transfer</artifactId>
+  <version>2023.10.29</version>
+  <name>chunked-transfer</name>
+  <licenses>
+    <license>
+      <name>EPL-2.0</name>
+      <url>https://github.com/wilkerlucio/chunked-transfer/blob/main/LICENSE</url>
+    </license>
+  </licenses>
+  <dependencies>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>1.10.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>core.async</artifactId>
+      <version>1.6.681</version>
+    </dependency>
+    <dependency>
+      <groupId>com.wsscode</groupId>
+      <artifactId>cljc-misc</artifactId>
+      <version>2022.03.07</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>src/main</sourceDirectory>
+  </build>
+  <repositories>
+    <repository>
+      <id>clojars</id>
+      <url>https://repo.clojars.org/</url>
+    </repository>
+  </repositories>
+</project>
